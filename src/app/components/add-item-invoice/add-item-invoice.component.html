@@ -1,0 +1,27 @@
+<div class="add-contact-container">
+    <h3 class="title">Add Item</h3>
+    <form class="add-contact__form" (submit)="addItem(name.value, quantity.value, unitPrice.value) ">
+      <div class="add-contact__form-group">
+        <label>
+          Item Name:
+          <input type="text" #name required>
+        </label>
+      </div>
+      <div class="add-contact__form-group">
+        <label>
+          Item Quantity:
+          <input type="number" #quantity required>
+        </label>
+      </div>
+      <div class="add-contact__form-group">
+        <label>
+          Item Price:
+          <input type="number" #unitPrice required>
+        </label>
+      </div>
+      
+      <div class="add-contact__form-actions">
+        <button type="submit">Add Contact</button>
+      </div>
+    </form>
+  </div>

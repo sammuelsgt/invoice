@@ -1,0 +1,64 @@
+<div class="invoice">
+    
+    <h2>Invoice</h2>
+    <h3>Submitted on {{submitDate}}</h3>
+    <div class="row">
+        <div class="col-md-3">
+            <h4>Invoice For</h4>
+                <div class="form-group">
+                    <p>{{invoiceName}}</p>
+                    <p>{{companyName}}</p>
+                    <p>{{streetAddress}}</p>
+                    <p>{{city}}, {{state}},{{zip}}</p>
+                </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <h4>Payable To</h4>
+                <p>{{payName}}</p>
+                <label>Project:</label>
+                <p>{{projectName}}</p>
+            </div>
+        </div>  
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>Invoice#:</label>
+                <p>{{invoiceNumber}}</p>
+                <label>Due Date:</label>
+                <p>{{dueDate}}</p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row2">
+        <div class="col-md-12">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let item of items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.unitPrice}}</td>
+                    <td>{{item.totalPrice}}</td>
+                    <td><button type="button" class="btn btn-danger" (click)="removeItem(item.id)">Remove</button></td>
+                    </tr>
+                    <tr>
+                    <td colspan="3" align="right">Subtotal:</td>
+                    <td>{{getSubtotal()}}</td>
+                    <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
